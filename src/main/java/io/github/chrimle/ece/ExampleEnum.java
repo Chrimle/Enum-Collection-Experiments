@@ -100,5 +100,9 @@ public enum ExampleEnum {
   NINETY_SEVEN,
   NINETY_EIGHT,
   NINETY_NINE,
-  ONE_HUNDRED
+  ONE_HUNDRED;
+
+  public static ExampleEnum getAtIndex(final int index) {
+    return ExampleEnum.values()[index];
+  }
 }
