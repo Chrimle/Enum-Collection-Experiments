@@ -11,8 +11,6 @@ name: Java CI with Maven
 on: # When this workflow shall be run. As-is, this workflow will run when "main" is updated, or when PRs for "main" are updated.
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 permissions:
   contents: read
@@ -26,7 +24,7 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v4
       with:
-        java-version: '17' # TODO: Update accordingly. See "strategy matrix" for testing multiple versions.
+        java-version: '25'
         distribution: 'temurin'
         cache: maven
     - name: Maven Build

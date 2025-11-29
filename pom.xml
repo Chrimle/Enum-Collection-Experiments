@@ -4,18 +4,22 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- === Parent === -->
+    <parent>
+        <groupId>io.github.chrimle</groupId>
+        <artifactId>chrimle-oss-parent</artifactId>
+        <version>0.1.0</version>
+    </parent>
+
     <!-- === Project Coordinates === -->
-    <!-- TODO: Update accordingly -->
-    <groupId>io.github.chrimle</groupId>
-    <artifactId>ultimate-maven-repository</artifactId>
-    <version>0.3.0</version>
+    <artifactId>enum-collection-experiments</artifactId>
+    <version>0</version>
     <packaging>jar</packaging>
 
     <!-- === Project Metadata === -->
-    <!-- TODO: Update accordingly -->
-    <name>Ultimate Maven Repository</name>
-    <description>The Ultimate Maven Repository Template for your GitHub projects!</description>
-    <url>https://chrimle.github.io/Ultimate-Maven-Repository</url>
+    <name>Enum Collection Experiments</name>
+    <description>Some Experimentation with Enums in Java</description>
+    <url>https://chrimle.github.io/Enum-Collection-Experiments</url>
     <inceptionYear>2025</inceptionYear>
 
     <licenses>
@@ -27,13 +31,11 @@
     </licenses>
 
     <organization>
-        <!-- TODO: Update accordingly -->
-        <name>Ultimate Maven Repository</name>
-        <url>https://chrimle.github.io/Ultimate-Maven-Repository/</url>
+        <name>Enum Collection Experiments</name>
+        <url>https://chrimle.github.io/Enum-Collection-Experiments/</url>
     </organization>
 
     <developers>
-        <!-- TODO: Update accordingly -->
         <developer>
             <id>Chrimle</id>
             <name>Christopher Molin</name>
@@ -46,43 +48,33 @@
     </developers>
 
     <scm>
-        <!-- TODO: Update Accordingly-->
-        <url>http://github.com/chrimle/ultimate-maven-repository/tree/main</url>
-        <connection>scm:git:git://github.com/chrimle/ultimate-maven-repository.git</connection>
-        <developerConnection>scm:git:ssh://github.com:chrimle/ultimate-maven-repository.git</developerConnection>
+        <url>http://github.com/chrimle/enum-collection-experiments/tree/main</url>
+        <connection>scm:git:git://github.com/chrimle/enum-collection-experiments.git</connection>
+        <developerConnection>scm:git:ssh://github.com:chrimle/enum-collection-experiments.git</developerConnection>
     </scm>
 
     <distributionManagement>
-        <!-- TODO: Update Accordingly -->
         <repository>
             <id>github</id>
             <name>GitHub Chrimle Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/chrimle/ultimate-maven-repository</url>
+            <url>https://maven.pkg.github.com/chrimle/enum-collection-experiments</url>
         </repository>
         <snapshotRepository>
             <id>github</id>
             <name>GitHub Chrimle Apache Maven Snapshot Packages</name>
-            <url>https://maven.pkg.github.com/chrimle/ultimate-maven-repository</url>
+            <url>https://maven.pkg.github.com/chrimle/enum-collection-experiments</url>
         </snapshotRepository>
     </distributionManagement>
 
     <!-- === Project Properties === -->
     <properties>
-        <!-- === Meta Properties === -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- === Maven Compiler === -->
-        <!-- TODO: Update accordingly -->
-        <maven.compiler.release>17</maven.compiler.release>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>25</maven.compiler.release>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
         <!-- === Spotless === -->
         <spotless.check.skip>false</spotless.check.skip>
         <spotless-maven-plugin.version>3.1.0</spotless-maven-plugin.version>
-        <!-- Publish to Maven Central Repository -->
-        <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
-        <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
-        <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
-        <central-publishing-maven-plugin.version>0.9.0</central-publishing-maven-plugin.version>
         <!-- === Dependency Versions === -->
     </properties>
 
@@ -123,7 +115,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>${maven-source-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -138,7 +129,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${maven-javadoc-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -151,44 +141,5 @@
         </plugins>
     </build>
     <!-- === Profiles === -->
-    <profiles>
-        <profile>
-            <id>deploy-to-maven-central</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.sonatype.central</groupId>
-                        <artifactId>central-publishing-maven-plugin</artifactId>
-                        <version>${central-publishing-maven-plugin.version}</version>
-                        <extensions>true</extensions>
-                        <configuration>
-                            <publishingServerId>central</publishingServerId>
-                            <tokenAuth>true</tokenAuth>
-                            <autoPublish>true</autoPublish>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>${maven-gpg-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <gpgArguments>
-                                <arg>--pinentry-mode</arg>
-                                <arg>loopback</arg>
-                            </gpgArguments>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+    <profiles/>
 </project>
