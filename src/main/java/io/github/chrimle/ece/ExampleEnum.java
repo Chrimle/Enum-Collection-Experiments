@@ -105,4 +105,8 @@ public enum ExampleEnum {
   public static ExampleEnum getAtIndex(final int index) {
     return ExampleEnum.values()[index];
   }
+
+  public static int getIndexCount() {
+    return ExampleEnum.values().length;
+  }
 }
